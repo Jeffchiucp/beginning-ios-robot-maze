@@ -15,21 +15,35 @@ extension ControlCenter {
         let cell = mazeController.currentCell(robot)
         var isWall: Bool = false
         
-        // Step 1.1a
+        switch(direction) {
+        case .Up:
+            if cell.top {
+                isWall = true
+            }
+        case .Down:
+            if cell.bottom {
+                isWall = true
+            }
+        case .Left:
+            if cell.left {
+                isWall = true
+            }
+        case .Right:
+            if cell.right {
+                isWall = true
+            }
+        default:
+            isWall = false
+            
+        }
+        // Step 1a
         // TODO: Write a switch statement handling all possible values of direction. The first case has been done for you. Uncomment the code and add the remaining cases!
-        //        switch(direction) {
-        //        case .Up:
-        //            if cell.top {
-        //                isWall = true
-        //            }
-        //
-        //        }
         
-        // Step 1.1b
+        // Step 1b
         // TODO: Return a Bool that represents whether the robot is currently facing a wall. You will need to change the placeholder return statement below.
         
-        
         // Placeholder
-        return false
+        return true
     }
+
 }
